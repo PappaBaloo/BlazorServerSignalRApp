@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {}
+    "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {}
   },
   "projects": {
-    "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {
+    "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+        "projectUniqueName": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
         "projectName": "BlazorServerSignalRApp",
-        "projectPath": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
-        "packagesPath": "/Users/charlie.sessernylun/.nuget/packages/",
-        "outputPath": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/",
+        "projectPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+        "packagesPath": "/Users/albin.norback/.nuget/packages/",
+        "outputPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/charlie.sessernylun/.nuget/NuGet/NuGet.Config"
+          "/Users/albin.norback/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -41,6 +41,10 @@
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
               "version": "[7.0.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.3, )"
             }
           },
           "imports": [

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L1gJwIV09ly4IWBfZPpmuEFZQYE2orTkHQFkxB0iiZo=",
+  "Hash": "/bh+WdVqFaB3CaL1y/LRXtEZaVuqsikKQe3Fcf5DEh0=",
   "Source": "BlazorServerSignalRApp",
   "BasePath": "_content/BlazorServerSignalRApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BlazorServerSignalRApp/wwwroot",
       "Source": "BlazorServerSignalRApp",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/bundle/BlazorServerSignalRApp.styles.css",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/bundle/BlazorServerSignalRApp.styles.css",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/bundle/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "BlazorServerSignalRApp.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/bundle/BlazorServerSignalRApp.styles.css"
+      "OriginalItemSpec": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/bundle/BlazorServerSignalRApp.styles.css"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/projectbundle/BlazorServerSignalRApp.bundle.scp.css",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/projectbundle/BlazorServerSignalRApp.bundle.scp.css",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/projectbundle/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "BlazorServerSignalRApp.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/projectbundle/BlazorServerSignalRApp.bundle.scp.css"
+      "OriginalItemSpec": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/Debug/net6.0/scopedcss/projectbundle/BlazorServerSignalRApp.bundle.scp.css"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/bootstrap/bootstrap.min.css",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/bootstrap/bootstrap.min.css",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/bootstrap/bootstrap.min.css.map",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/FONT-LICENSE",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/FONT-LICENSE",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.eot"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.otf"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.svg"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/ICON-LICENSE",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/ICON-LICENSE",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/open-iconic/README.md",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/open-iconic/README.md",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/css/site.css",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/css/site.css",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/favicon.ico",
+      "Identity": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/favicon.ico",
       "SourceId": "BlazorServerSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/charlie.sessernylun/ReposC/BlazorChatApp/BlazorServerSignalRApp/wwwroot/",
+      "ContentRoot": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/wwwroot/",
       "BasePath": "_content/BlazorServerSignalRApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
