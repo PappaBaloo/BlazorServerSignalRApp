@@ -939,11 +939,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "/Users/albin.norback/.nuget/packages/": {}
+=======
+    "/Users/markusrobert.piotro/.nuget/packages/": {}
+>>>>>>> 1c5e1eb (Commit)
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
       "projectName": "BlazorServerSignalRApp",
       "projectPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
@@ -952,6 +957,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/albin.norback/.nuget/NuGet/NuGet.Config"
+=======
+      "projectUniqueName": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+      "projectName": "BlazorServerSignalRApp",
+      "projectPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+      "packagesPath": "/Users/markusrobert.piotro/.nuget/packages/",
+      "outputPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/markusrobert.piotro/.nuget/NuGet/NuGet.Config"
+>>>>>>> 1c5e1eb (Commit)
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1003,7 +1018,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }

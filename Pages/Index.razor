@@ -17,6 +17,19 @@
         <input @bind="messageInput" size="50" />
     </label>
 </div>
+
+<div class="form-group">
+    <label>
+        Translate To:
+        <select @bind="languageInput">
+            <option value="none">None</option>
+            <option value="japanese">Japanese</option>
+            <option value="swedish">Swedish</option>
+            <option value="english">English</option>
+        </select>
+    </label>
+</div>
+
 <button @onclick="Send" disabled="@(!IsConnected)">Send</button>
 
 <hr>
@@ -33,6 +46,7 @@
     private List<string> messages = new List<string>();
     private string? userInput;
     private string? messageInput;
+    private string languageInput = "none";
 
     protected override async Task OnInitializedAsync()
     {
@@ -54,8 +68,17 @@
     {
         if (hubConnection is not null)
         {
+            if (languageInput != "none") {
+                messageInput = await Translate(messageInput, languageInput);
+            }
+
             await hubConnection.SendAsync("SendMessage", userInput, messageInput);
         }
+    }
+
+    private async Task<string> Translate(string message, string language){
+
+
     }
 
     public bool IsConnected =>
