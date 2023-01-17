@@ -1,10 +1,22 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.SignalR.Client
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@inject IHttpClientFactory ClientFactory
 @inject NavigationManager Navigation
 @implements IAsyncDisposable
 
 <PageTitle>Index</PageTitle>
 
+    <label style="margin-bottom: 2rem;">
+        Language:
+        <select @onchange="@((ChangeEventArgs __e) => {languageInput = __e?.Value?.ToString(); UpdateTranslation();})">
+            <option value="none">None</option>
+            <option value="JA">Japanese</option>
+            <option value="SV">Swedish</option>
+            <option value="EN">English</option>
+        </select>
+    </label>
 <div class="form-group">
     <label>
         User:
@@ -19,15 +31,6 @@
 </div>
 
 <div class="form-group">
-    <label>
-        Translate To:
-        <select @bind="languageInput">
-            <option value="none">None</option>
-            <option value="japanese">Japanese</option>
-            <option value="swedish">Swedish</option>
-            <option value="english">English</option>
-        </select>
-    </label>
 </div>
 
 <button @onclick="Send" disabled="@(!IsConnected)">Send</button>
@@ -37,13 +40,13 @@
 <ul id="messagesList">
     @foreach (var message in messages)
     {
-        <li>@message</li>
+        <li>@($"{message.timestamp} {message.user}: {message.message}")</li>
     }
 </ul>
 
 @code {
     private HubConnection? hubConnection;
-    private List<string> messages = new List<string>();
+    private List<Message> messages = new List<Message>();
     private string? userInput;
     private string? messageInput;
     private string languageInput = "none";
@@ -54,10 +57,17 @@
         .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
         .Build();
 
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<string, string, string>("ReceiveMessage", async (user, message, timestamp) =>
         {
-            var encodedMsg = $"{user}: {message}";
-            messages.Add(encodedMsg);
+            if (languageInput != "none") {
+                TranslationResponse translation = await Translate(message, languageInput);
+
+                message = translation.Translations[0].Text;
+            }
+
+            Message newMessage = new Message(user, message, timestamp);
+
+            messages.Add(newMessage);
             InvokeAsync(StateHasChanged);
         });
 
@@ -68,17 +78,47 @@
     {
         if (hubConnection is not null)
         {
-            if (languageInput != "none") {
-                messageInput = await Translate(messageInput, languageInput);
-            }
+            
 
-            await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+            DateTime currentTime = DateTime.Now;
+
+            string timestamp = currentTime.ToLocalTime().ToShortDateString() + " " + currentTime.ToLocalTime().ToShortTimeString();
+
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput, timestamp);
         }
     }
 
-    private async Task<string> Translate(string message, string language){
+    private async Task<TranslationResponse> Translate(string message, string language){
+        var request = new HttpRequestMessage(HttpMethod.Post,
+            "https://api-free.deepl.com/v2/translate?text="+ message+"&target_lang="+language);
 
+        request.Headers.Add("Authorization", "DeepL-Auth-Key 3f9bc828-eaec-f58f-aba8-49f755e54c4e:fx");
+        request.Headers.Add("User-Agent", "HttpClientFactory-Sample");
 
+        var client = ClientFactory.CreateClient();
+
+        var response = await client.SendAsync(request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            string res = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(res);
+            return JsonSerializer.Deserialize<TranslationResponse>(res);
+        }
+
+        return new TranslationResponse();
+    }
+
+    public async void UpdateTranslation() {
+
+        for(int i = 0; i < messages.Count; i++) {
+            TranslationResponse translation = await Translate(messages[i].message, languageInput);
+            messages[i].message = translation.Translations[0].Text;
+            Console.WriteLine(translation.Translations[0].Text);
+            Console.WriteLine(messages[i].message);
+        }
+
+        InvokeAsync(StateHasChanged);
     }
 
     public bool IsConnected =>
@@ -90,5 +130,41 @@
         {
             await hubConnection.DisposeAsync();
         }
+    }
+
+    public class TranslationResponse
+    {
+        [JsonPropertyName("translations")]
+        public List<Translation>? Translations { get; set; }
+    }
+
+    public class Translation
+    {
+        [JsonPropertyName("detected_source_language")]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("text")]
+        public string? Text { get; set; }
+    }
+
+    public class Message
+    {
+        public Message(string user, string message, string timestamp) {
+            this.user = user;
+            this.message = message;
+            this.timestamp = timestamp;
+        }
+
+        public string user;
+
+        public string message;
+
+        public string timestamp;
+
+        public override string ToString()
+        {
+            return $"";
+        }
+    
     }
 }
