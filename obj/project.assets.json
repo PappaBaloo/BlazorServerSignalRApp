@@ -719,11 +719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/markusrobert.piotro/Repos/BlazorApp2/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+      "projectUniqueName": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
       "projectName": "BlazorServerSignalRApp",
-      "projectPath": "/Users/markusrobert.piotro/Repos/BlazorApp2/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+      "projectPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
       "packagesPath": "/Users/markusrobert.piotro/.nuget/packages/",
-      "outputPath": "/Users/markusrobert.piotro/Repos/BlazorApp2/BlazorServerSignalRApp/obj/",
+      "outputPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/markusrobert.piotro/.nuget/NuGet/NuGet.Config"

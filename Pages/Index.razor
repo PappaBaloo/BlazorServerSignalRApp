@@ -40,9 +40,45 @@
 <ul id="messagesList">
     @foreach (var message in messages)
     {
-        <li>@($"{message.timestamp} {message.user}: {message.message}")</li>
+        <li>@($"{message.timestamp} {message.user}: {message.message}")
+            <div>
+            <select @bind="message.currentSelectedReaction">
+                <option value="none"></option>
+                <option value="😁">😁</option>
+                <option value="🤬">🤬</option>
+                <option value="😱">😱</option>
+            </select>
+            <button @onclick="(MouseEventArgs e) => SendReaction(message)">+</button>
+            </div>
+            <p>
+                @foreach (var reaction in message.getUniqueReactions())
+                {
+                    <span class="reaction"><span>@reaction</span><span>@message.getReactionCount(reaction)</span>
+                    <span class="reactionSenders">
+                    @foreach(var sender in message.getReactionSenders(reaction))
+                    {
+                        @(sender + ", ")
+                    }
+                    </span>
+                    </span>
+                }
+            </p>
+        </li>
     }
 </ul>
+
+<style>
+.reactionSenders {
+    display: none;
+    position: absolute;
+    top: -2rem;
+}
+
+.reaction:hover > .reactionSenders {
+    display: inline;
+}
+
+</style>
 
 @code {
     private HubConnection? hubConnection;
@@ -50,6 +86,7 @@
     private string? userInput;
     private string? messageInput;
     private string languageInput = "none";
+    private string reactionInput = "none";
 
     protected override async Task OnInitializedAsync()
     {
@@ -57,7 +94,7 @@
         .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
         .Build();
 
-        hubConnection.On<string, string, string>("ReceiveMessage", async (user, message, timestamp) =>
+        hubConnection.On<string, string, string, string>("ReceiveMessage", async (user, message, timestamp, id) =>
         {
             if (languageInput != "none") {
                 TranslationResponse translation = await Translate(message, languageInput);
@@ -65,11 +102,23 @@
                 message = translation.Translations[0].Text;
             }
 
-            Message newMessage = new Message(user, message, timestamp);
+            Message newMessage = new Message(user, message, timestamp, id);
 
             messages.Add(newMessage);
             InvokeAsync(StateHasChanged);
         });
+
+            HubConnectionExtensions.On<string, string, string>(hubConnection, "ReceiveReaction", (reaction, messageId, user) =>
+            {
+                for (int i = 0; i < messages.Count; i++)
+                {
+                    if (messages[i].id == messageId) {
+                        messages[i].reactions.Add(new Reaction(reaction, user));
+                    }
+                }
+
+                InvokeAsync(StateHasChanged);
+            });
 
         await hubConnection.StartAsync();
     }
@@ -79,12 +128,21 @@
         if (hubConnection is not null)
         {
             
-
             DateTime currentTime = DateTime.Now;
 
             string timestamp = currentTime.ToLocalTime().ToShortDateString() + " " + currentTime.ToLocalTime().ToShortTimeString();
 
-            await hubConnection.SendAsync("SendMessage", userInput, messageInput, timestamp);
+            Random generator = new();
+
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput, timestamp, generator.Next(10000).ToString());
+        }
+    }
+
+    private async void SendReaction(Message message) {
+        if (hubConnection != null && message.currentSelectedReaction != "none")
+        {
+            await hubConnection.SendAsync("SendReaction", message.currentSelectedReaction, message.id, userInput );
+
         }
     }
 
@@ -149,11 +207,21 @@
 
     public class Message
     {
-        public Message(string user, string message, string timestamp) {
+        public Message(string user, string message, string timestamp, string id = "") {
+            Random generator = new Random();
             this.user = user;
             this.message = message;
             this.timestamp = timestamp;
+
+            if (id == "")
+            {
+            this.id= generator.Next(100000).ToString();
+            }
+
+            this.id = id;
         }
+
+        public string id;
 
         public string user;
 
@@ -161,10 +229,62 @@
 
         public string timestamp;
 
+        public string currentSelectedReaction;
+
+        public List<Reaction> reactions = new();
+
+        public List<string> getUniqueReactions() {
+            List<string> uniqueReactions = new();
+
+            for(int i = 0; i < reactions.Count; i++){
+                if (!uniqueReactions.Contains(reactions[i].reactionString)) {
+                    uniqueReactions.Add(reactions[i].reactionString);
+                }
+            }
+
+            return  uniqueReactions;
+        }
+
+        public int getReactionCount(string reaction) {
+            int count = 0;
+
+            for (int i = 0; i < reactions.Count; i++) {
+                if (reactions[i].reactionString == reaction) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        public List<string> getReactionSenders(string reaction) {
+            List<string> uniqueSenders = new();
+
+            for(int i = 0; i < reactions.Count; i++){
+                if (!uniqueSenders.Contains(reactions[i].sender) && reactions[i].reactionString == reaction) {
+                    uniqueSenders.Add(reactions[i].sender);
+                }
+            }
+
+            return uniqueSenders;
+        }
+
         public override string ToString()
         {
             return $"";
         }
     
+    }
+
+    public class Reaction {
+        public Reaction(string reaction, string user) {
+            reactionString = reaction;
+            sender = user;
+        }
+
+        public string reactionString;
+
+        public string sender;
+
     }
 }

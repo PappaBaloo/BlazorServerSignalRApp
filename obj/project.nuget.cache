@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IAwp4YDT64WysrY0COhKUemCiIql9gl5rm+fxWc/CHZ5NTY2uW/bdwYLUFUfYx5PkV4xjbrFYhQPg4v4Tecvvg==",
+  "dgSpecHash": "7KLANqLcxj1X56k7XAjj/1f5ncqJ8orEFOx2VeUcHqajukxPBlJXyDH+jVzz7/EZULiZf3/TocIzef8zPJ4Lag==",
   "success": true,
-  "projectFilePath": "/Users/markusrobert.piotro/Repos/BlazorApp2/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+  "projectFilePath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
   "expectedPackageFiles": [
     "/Users/markusrobert.piotro/.nuget/packages/microsoft.aspnetcore.connections.abstractions/7.0.2/microsoft.aspnetcore.connections.abstractions.7.0.2.nupkg.sha512",
     "/Users/markusrobert.piotro/.nuget/packages/microsoft.aspnetcore.http.connections.client/7.0.2/microsoft.aspnetcore.http.connections.client.7.0.2.nupkg.sha512",
