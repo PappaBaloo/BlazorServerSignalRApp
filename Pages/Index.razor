@@ -137,6 +137,7 @@
     }
 
     private async void SendReaction(Message message) {
+        Console.WriteLine(message.currentSelectedReaction);
         if (hubConnection != null && message.currentSelectedReaction != "none")
         {
             await hubConnection.SendAsync("SendReaction", message.currentSelectedReaction, message.id, userInput );
@@ -227,7 +228,7 @@
 
         public string timestamp;
 
-        public string currentSelectedReaction;
+        public string currentSelectedReaction = "none";
 
         public List<Reaction> reactions = new();
 
