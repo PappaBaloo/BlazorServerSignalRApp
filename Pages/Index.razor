@@ -55,10 +55,7 @@
                 {
                     <span class="reaction"><span>@reaction</span><span>@message.getReactionCount(reaction)</span>
                     <span class="reactionSenders">
-                    @foreach(var sender in message.getReactionSenders(reaction))
-                    {
-                        @(sender + ", ")
-                    }
+                    @string.Join(", ", message.getReactionSenders(reaction))
                     </span>
                     </span>
                 }
@@ -69,14 +66,15 @@
 
 <style>
 .reactionSenders {
-    display: none;
-    position: absolute;
-    top: -2rem;
+    display:none;
+    position:absolute;
+    margin-top: 1rem;
+    margin-left: -3rem;
 }
 
 .reaction:hover > .reactionSenders {
     display: inline;
-}
+} 
 
 </style>
 
