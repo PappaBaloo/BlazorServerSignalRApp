@@ -7,6 +7,15 @@
 @implements IAsyncDisposable
 
 <PageTitle>Index</PageTitle>
+<div class="popup-wrapper">
+<div class="username-input">
+    <label>
+        Username:
+        <input @bind="userInput" />
+    </label>
+</div>
+</div>
+<div hidden="@(hasSelectedName)">
     <div>
     <label>
         Group:
@@ -27,12 +36,6 @@
             <option value="EN">English</option>
         </select>
     </label>
-<div class="form-group">
-    <label>
-        User:
-        <input @bind="userInput" />
-    </label>
-</div>
 <div class="form-group">
     <label>
         Message:
@@ -73,8 +76,20 @@
         </li>
     }
 </ul>
+</div>
 
 <style>
+
+.username-input {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    background-color: black;
+    color: white;
+}
+
 .reactionSenders {
     display:none;
     position:absolute;
@@ -96,6 +111,7 @@
     private string languageInput = "none";
     private string reactionInput = "none";
     private string groupInput = "general";
+    private bool hasSelectedName = false;
 
     protected override async Task OnInitializedAsync()
     {
