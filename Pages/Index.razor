@@ -7,9 +7,19 @@
 @implements IAsyncDisposable
 
 <PageTitle>Index</PageTitle>
+    <div>
+    <label>
+        Group:
+        <select @bind="groupInput">
+            <option value="general">General Chat</option>
+            <option value="japanse">Japanese Chat</option>
+            <option value="english">English Chat</option>
+        </select>
+    </label>
+    </div>
 
     <label style="margin-bottom: 2rem;">
-        Language:
+        Language To Translate To:
         <select @onchange="@((ChangeEventArgs __e) => {languageInput = __e?.Value?.ToString(); UpdateTranslation();})">
             <option value="none">None</option>
             <option value="JA">Japanese</option>
@@ -38,7 +48,7 @@
 <hr>
 
 <ul id="messagesList">
-    @foreach (var message in messages)
+    @foreach (var message in messages.FindAll((message) => message.groupName == groupInput))
     {
         <li>@($"{message.timestamp} {message.user}: {message.message}")
             <div>
@@ -85,6 +95,7 @@
     private string? messageInput;
     private string languageInput = "none";
     private string reactionInput = "none";
+    private string groupInput = "general";
 
     protected override async Task OnInitializedAsync()
     {
@@ -92,7 +103,7 @@
         .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
         .Build();
 
-        hubConnection.On<string, string, string, string>("ReceiveMessage", async (user, message, timestamp, id) =>
+        hubConnection.On<string, string, string, string, string>("ReceiveMessage", async (user, message, timestamp, group, id) =>
         {
             if (languageInput != "none") {
                 TranslationResponse translation = await Translate(message, languageInput);
@@ -100,7 +111,7 @@
                 message = translation.Translations[0].Text;
             }
 
-            Message newMessage = new Message(user, message, timestamp, id);
+            Message newMessage = new Message(user, message, timestamp, group, id);
 
             messages.Add(newMessage);
             InvokeAsync(StateHasChanged);
@@ -132,7 +143,7 @@
 
             Random generator = new();
 
-            await hubConnection.SendAsync("SendMessage", userInput, messageInput, timestamp, generator.Next(10000).ToString());
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput, timestamp, groupInput, generator.Next(10000).ToString());
         }
     }
 
@@ -172,7 +183,7 @@
         {
             return;
         }
-        
+
         for(int i = 0; i < messages.Count; i++) {
             TranslationResponse translation = await Translate(messages[i].message, languageInput);
             messages[i].message = translation.Translations[0].Text;
@@ -211,11 +222,12 @@
 
     public class Message
     {
-        public Message(string user, string message, string timestamp, string id = "") {
+        public Message(string user, string message, string timestamp, string group, string id = "") {
             Random generator = new Random();
             this.user = user;
             this.message = message;
             this.timestamp = timestamp;
+            this.groupName = group;
 
             if (id == "")
             {
@@ -232,6 +244,8 @@
         public string message;
 
         public string timestamp;
+
+        public string groupName;
 
         public string currentSelectedReaction = "none";
 
