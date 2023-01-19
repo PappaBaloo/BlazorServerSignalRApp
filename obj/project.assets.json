@@ -714,19 +714,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/markusrobert.piotro/.nuget/packages/": {}
+    "/Users/albin.norback/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+      "projectUniqueName": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
       "projectName": "BlazorServerSignalRApp",
-      "projectPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
-      "packagesPath": "/Users/markusrobert.piotro/.nuget/packages/",
-      "outputPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/obj/",
+      "projectPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+      "packagesPath": "/Users/albin.norback/.nuget/packages/",
+      "outputPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/markusrobert.piotro/.nuget/NuGet/NuGet.Config"
+        "/Users/albin.norback/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
