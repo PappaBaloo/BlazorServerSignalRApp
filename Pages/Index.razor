@@ -168,6 +168,11 @@
 
     public async void UpdateTranslation() {
 
+        if (languageInput=="none")
+        {
+            return;
+        }
+        
         for(int i = 0; i < messages.Count; i++) {
             TranslationResponse translation = await Translate(messages[i].message, languageInput);
             messages[i].message = translation.Translations[0].Text;
