@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "/Users/charlie.sessernylun/ReposC/NewChat/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/charlie.sessernylun/.nuget/NuGet/NuGet.Config"
+=======
+    "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {}
+  },
+  "projects": {
+    "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+        "projectName": "BlazorServerSignalRApp",
+        "projectPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+        "packagesPath": "/Users/markusrobert.piotro/.nuget/packages/",
+        "outputPath": "/Users/markusrobert.piotro/Repos/BlazorServerSignalRApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/markusrobert.piotro/.nuget/NuGet/NuGet.Config"
+>>>>>>> 650ce8d (Commit)
         ],
         "originalTargetFrameworks": [
           "net6.0"
