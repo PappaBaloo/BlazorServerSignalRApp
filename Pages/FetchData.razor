@@ -1,8 +1,9 @@
 ﻿@page "/fetchdata"
-@using BlazorServerSignalRApp.Data
-@inject WeatherForecastService ForecastService
 
 <PageTitle>Weather forecast</PageTitle>
+
+@using BlazorServerSignalRApp.Data
+@inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
 
@@ -42,6 +43,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 }

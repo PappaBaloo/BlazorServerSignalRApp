@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {}
+    "/Users/charlie.sessernylun/ReposC/NewChat/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {}
   },
   "projects": {
-    "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {
+    "/Users/charlie.sessernylun/ReposC/NewChat/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+        "projectUniqueName": "/Users/charlie.sessernylun/ReposC/NewChat/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
         "projectName": "BlazorServerSignalRApp",
-        "projectPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
-        "packagesPath": "/Users/albin.norback/.nuget/packages/",
-        "outputPath": "/Users/albin.norback/Programming/C#/BlazorServerSignalRApp/obj/",
+        "projectPath": "/Users/charlie.sessernylun/ReposC/NewChat/BlazorServerSignalRApp/BlazorServerSignalRApp.csproj",
+        "packagesPath": "/Users/charlie.sessernylun/.nuget/packages/",
+        "outputPath": "/Users/charlie.sessernylun/ReposC/NewChat/BlazorServerSignalRApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/albin.norback/.nuget/NuGet/NuGet.Config"
+          "/Users/charlie.sessernylun/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net6.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -35,14 +35,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.SignalR.Client": {
-              "target": "Package",
-              "version": "[7.0.2, )"
-            }
-          },
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -62,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
         }
       }
     }
