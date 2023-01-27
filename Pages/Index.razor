@@ -7,15 +7,12 @@
 @implements IAsyncDisposable
 
 <PageTitle>Index</PageTitle>
-<div class="username-input" hidden="@(hasSelectedName)">
-    <form @onsubmit="SetUsername" @onsubmit:preventDefault>
-        <label>
-            Username:
-            <input @bind="userInput" required />
-        </label>
-        <button type="submit">Submit</button>
-    </form>
-</div>
+<form class="username-box" hidden="@(hasSelectedName)" @onsubmit="SetUsername" @onsubmit:preventDefault>
+
+    <input @bind="userInput" required placeholder="Username" class="username-input" />
+
+    <button type="submit" class="join-btn">JOIN</button>
+</form>
 
 <div hidden="@(!hasSelectedName)">
     <div>
@@ -83,81 +80,111 @@
 </div>
 
 <style>
-    .username-input {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 3rem;
-        background-color: black;
-        color: white;
-    }
+.username-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 2rem 1rem;
+    background-color: white;
+    box-shadow: 5px 10px 10px grey;
+    color: whitesmoke;
+    border: 1px solid grey;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 
-    .reactionSenders {
-        display: none;
-        position: absolute;
-        margin-top: 1.5rem;
-        margin-left: -2.5rem;
-        font-size: 1rem;
-    }
+.username-input {
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 70%;
+}
 
-    .send-button {
-        background-color: #0080FF;
-        border: 1px solid black;
-        border-radius: 3px;
-        min-width: 3rem;
-    }
+.username-input:focus {
+    border: none;
+    border-bottom: 1px solid grey;
+}
 
-    .reaction:hover>.reactionSenders {
-        display: inline;
-    }
+.join-btn {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.4rem 1.5rem;
+    border-radius: 5px;
+    background-color: #0080FF;
+    border: none;
+}
 
-    #messagesList {
-        list-style: none;
-        padding-left: 0;
-    }
+.reactionSenders {
+    display: none;
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: -2.5rem;
+    font-size: 1rem;
+}
 
-    .message-header {
-        display: flex;
-        justify-content: space-between;
-    }
+.send-button {
+    background-color: #0080FF;
+    border: 1px solid black;
+    border-radius: 3px;
+    min-width: 3rem;
+}
 
-    .message-timestamp {
-        font-size: 0.8rem;
-        padding-right: 0.7rem;
-    }
+.reaction:hover > .reactionSenders {
+    display: inline;
+}
 
-    .message-container {
-        // layout
-        position: relative;
-        max-width: 30em;
+#messagesList {
+    list-style: none;
+    padding-left: 0;
+}
 
-        // looks
-        background-color: #fff;
-        padding: 0.5rem 0 1.125em 1.5em;
-        font-size: 1.25em;
-        border-radius: 1rem;
-        box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+.message-header {
+    display: flex;
+    justify-content: space-between;
+}
 
-        margin: 1rem;
-        margin-left: 0;
-    }
+.message-timestamp {
+    font-size: 0.8rem;
+    padding-right: 0.7rem;
+}
 
-    .message-container::before {
-        // layout
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-        bottom: 100%;
-        left: 1.5em; // offset should move with padding of parent
-        border: .75rem solid transparent;
-        border-top: none;
+.message-container {
+    // layout
+    position: relative;
+    max-width: 30em;
 
-        // looks
-        border-bottom-color: #fff;
-        filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
-    }
+    // looks
+    background-color: #fff;
+    padding: 0.5rem 0 1.125em 1.5em;
+    font-size: 1.25em;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+
+    margin: 1rem;
+    margin-left: 0;
+}
+
+.message-container::before {
+    // layout
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left: 1.5em; // offset should move with padding of parent
+    border: .75rem solid transparent;
+    border-top: none;
+
+    // looks
+    border-bottom-color: #fff;
+    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}
 </style>
 
 @code {
@@ -226,7 +253,6 @@
 
     private async void SendReaction(Message message)
     {
-        Console.WriteLine(message.currentSelectedReaction);
         if (hubConnection != null && message.currentSelectedReaction != "none")
         {
             await hubConnection.SendAsync("SendReaction", message.currentSelectedReaction, message.id, userInput);
